@@ -1,7 +1,8 @@
 
 #NumberEngine
 #Author:Charlotte Uwimana
-# 10/13/2017
+# Lab #10
+# 12/1/2017
 #=============================================================
 #allow the user to enter two number and to choose the operation
 # show intro _____ loop _________end
@@ -9,18 +10,21 @@
 # commands: " add, mult, diff, quot, quit
 #Using try and except to avoid errors that can collapse the program
 #================================================================
-def intro():
-    print("Welcome to Arithematic Engeine!\n"
-          "===============================\n")
-    print("This program is allow you to enter two numbers anc choose the operation that you want to use.")
-    print()
+
+from graphics import *
+#def intro():
+    #print("Welcome to Arithematic Engine!\n"
+          #"===============================\n")
+    #print("This program is allow you to enter two numbers and choose the operation that you want to use.")
+    #print()
 def end():
     print("\n Thank you for using Arithematic Engine...")
     print("\n please come back again soon!")
     
 def loop():
+    print("Valid command are: add, mult, diff, quot, and quit")
     while True:
-        cmd = input("what the operation you want to perform?")
+        cmd = input("what the operation you want to perform?: ")
         if cmd == "quit":
             break
         try:
@@ -43,7 +47,12 @@ def loop():
  
         print( "The result is: " + str(result)+ ".\n")
 def main():
-    intro()
+    app = GraphWin("Arthimatic Angine", 600, 200)
+    app.setCoords(0,0,10,10)
+    Text(Point(5,7), "Welcome to Arithematic Engine!\n"
+                   "===============================\n")
+    Text(Point(4,3), "This program is allow you to enter two numbers and choose the operation that you want to use.")
+   
     loop()
     end()
 main()
